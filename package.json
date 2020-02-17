@@ -1,0 +1,68 @@
+{
+	"description": "A suite of utilities for calculating things pertaining to League of Legends.",
+	"private": true,
+	"author": "James Adam Armstrong",
+	"license": "ISC",
+	"homepage": "https://github.com/Gwenio/lolcalc.git",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Gwenio/lolcalc.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Gwenio/lolcalc/issues"
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@commitlint/cli": "^8.3.5",
+		"@commitlint/config-conventional": "^8.3.4",
+		"@typescript-eslint/eslint-plugin": "^2.19.2",
+		"@typescript-eslint/parser": "^2.19.2",
+		"@typescript-eslint/typescript-estree": "^2.19.2",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-plugin-node": "^11.0.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-unicorn": "^16.1.1",
+		"husky": "^4.2.3",
+		"lint-staged": "^10.0.7",
+		"markdownlint-cli": "^0.22.0",
+		"prettier": "^1.19.1",
+		"rxjs": "^6.5.4",
+		"typescript": "^3.7.5"
+	},
+	"engines": {
+		"node": ">=12.16.0"
+	},
+	"greenkeeper": {
+		"ignore": ["prettier", "husky", "lint-staged", "markdownlint-cli"],
+		"commitMessages": {
+			"initialBadge": "docs(readme): add greenkeeper badge",
+			"initialDependencies": "chore(package) update dependencies",
+			"initialBranches": "ci: whitelist greenkeeper branches",
+			"dependencyUpdate": "chore(package): update ${dependency} to version ${version}",
+			"devDependencyUpdate": "chore(package): update ${dependency} to version ${version}",
+			"dependencyPin": "build(package): pin ${dependency} to ${oldVersion}",
+			"devDependencyPin": "build(package): pin ${dependency} to ${oldVersion}"
+		},
+		"prTitles": {
+			"initialPR": "Enable Greenkeeper",
+			"initialPrBadge": "Add Greenkeeper badge to enable Greenkeeper",
+			"initialPrBadgeOnly": "Add Greenkeeper badge",
+			"initialSubgroupPR": "Update dependencies for ${group}",
+			"basicPR": "Update ${dependency} to the latest",
+			"groupPR": "Update ${dependency} in group ${group} to the latest"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npx lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"**.js": ["prettier --write", "git add", "eslint"],
+		"**.ts": ["prettier --write", "git add", "eslint"],
+		"**.md": ["markdownlint -c ./.markdownlint.json"],
+		"**.json": ["prettier --write", "git add"]
+	}
+}

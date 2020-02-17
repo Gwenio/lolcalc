@@ -1,0 +1,44 @@
+{
+	"root": true,
+	"parserOptions": {
+		"ecmaVersion": 10,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"classes": true,
+			"modules": true,
+			"templateStrings": true,
+			"impliedStrict": true,
+			"arrowFunctions": true
+		}
+	},
+	"env": {
+		"node": true,
+		"es6": true
+	},
+	"plugins": ["unicorn", "promise"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:node/recommended",
+		"plugin:unicorn/recommended",
+		"plugin:promise/recommended",
+		"prettier"
+	],
+	"rules": {
+		"new-parens": "error",
+		"no-bitwise": "error",
+		"no-console": "off",
+		"no-debugger": "off",
+		"node/no-unpublished-require": "off",
+		"promise/always-return": "off",
+		"promise/catch-or-return": "off",
+		"unicorn/number-literal-case": "off",
+		"unicorn/filename-case": [
+			"error",
+			{
+				"cases": {
+					"snakeCase": true
+				}
+			}
+		]
+	}
+}
