@@ -1,0 +1,29 @@
+{
+	"name": "~component",
+	"private": true,
+	"description": "Basic component system for HTML rendering.",
+	"author": "James Adam Armstrong",
+	"version": "0.0.1",
+	"license": "ISC",
+	"module": "tmp/index.js",
+	"homepage": "https://github.com/Gwenio/lolcalc.git",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Gwenio/lolcalc.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Gwenio/lolcalc/issues"
+	},
+	"scripts": {
+		"clean": "rimraf tmp",
+		"compile": "tsc -p tsconfig.json"
+	},
+	"engines": {
+		"node": ">=12.16.0"
+	},
+	"devDependencies": {
+		"@types/node": "^13.7.1",
+		"nanomorph": "^5.4.0",
+		"rimraf": "^3.0.2"
+	}
+}
